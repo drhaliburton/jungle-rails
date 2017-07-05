@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.s.draw do
 
   root to: 'products#index'
 
@@ -18,21 +18,21 @@ Rails.application.routes.draw do
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  # See how all your s lay out with "rake s".
 
-  # You can have the root of your site routed with "root"
+  # You can have the root of your site d with "root"
   # root 'welcome#index'
 
-  # Example of regular route:
+  # Example of regular :
   #   get 'products/:id' => 'catalog#view'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
+  # Example of named  that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
+  # Example resource  (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  # Example resource route with options:
+  # Example resource  with options:
   #   resources :products do
   #     member do
   #       get 'short'
@@ -44,13 +44,13 @@ Rails.application.routes.draw do
   #     end
   #   end
 
-  # Example resource route with sub-resources:
+  # Example resource  with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
   #     resource :seller
   #   end
 
-  # Example resource route with more complex sub-resources:
+  # Example resource  with more complex sub-resources:
   #   resources :products do
   #     resources :comments
   #     resources :sales do
@@ -58,14 +58,14 @@ Rails.application.routes.draw do
   #     end
   #   end
 
-  # Example resource route with concerns:
+  # Example resource  with concerns:
   #   concern :toggleable do
   #     post 'toggle'
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
 
-  # Example resource route within a namespace:
+  # Example resource  within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
