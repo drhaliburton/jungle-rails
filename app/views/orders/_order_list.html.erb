@@ -11,11 +11,11 @@
     </thead>
     <% @order.line_items.each do |product| %>
       <tr>
-        <td><%= product.product.name %></td>
-        <td><%= image_tag product.product.image %></td>
+        <td class="title"><%= product.product.name %></td>
+        <td class="image"><%= image_tag product.product.image %></td>
         <td><%= product.product.description %></td> 
-        <td><%= product.product.quantity %></td>
-        <td><%= humanized_money_with_symbol product.product.quantity * @order.total_cents/100%></td>
+        <td><%= product.quantity %></td>
+        <td><%= humanized_money_with_symbol product.quantity * product.product.price_cents/100%></td>
       </tr>      
     <% end %>
     </table>
