@@ -31,6 +31,31 @@ cat3 = Category.find_or_create_by! name: 'Furniture'
 
 ## PRODUCTS
 
+puts "Creating Users ..."
+
+User.destroy_all
+
+User.create!({
+  first_name: "Rebecca",
+  last_name: "Haliburton",
+  email: "a@a.a",
+  password_digest: "a"
+})
+
+User.create!({
+  first_name: "Shauna",
+  last_name: "G",
+  email: "g@g.g",
+  password_digest: "g"
+})
+
+User.create!({
+  first_name: "Aisha",
+  last_name: "Ram",
+  email: "r@r.r",
+  password_digest: "r"
+})
+ 
 puts "Re-creating Products ..."
 
 Product.destroy_all
@@ -132,5 +157,29 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "Creating Ratings..."
+
+Rating.destroy_all
+
+Rating.create!({
+  description: Faker::Hipster.paragraph(1),
+  rating: 4,
+  user_id: 1,
+  product_id: 1
+})
+
+Rating.create!({
+  description: Faker::Hipster.paragraph(1),
+  rating: 3,
+  user_id: 2,
+  product_id: 2
+})
+
+Rating.create!({
+  description: Faker::Hipster.paragraph(1),
+  rating: 1,
+  user_id: 3,
+  product_id: 3
+})
 
 puts "DONE!"
