@@ -23,7 +23,7 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
           <dt>Reviews</dt>
-          <% @rating.each do |r| %>
+          <% @review.each do |r| %>
           <dd><%= '⭐️' * r.rating %></dd>
           <dd><%= r.description %></dd>
           <% end %>
