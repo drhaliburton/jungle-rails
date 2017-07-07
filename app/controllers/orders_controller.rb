@@ -9,8 +9,10 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
 
     if order.valid?
+      user = User.find(session[:user_id])
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
+      UserMailer.order_confirm(order, user).deliver_now
     else
       redirect_to cart_path, error: order.errors.full_messages.first
     end
@@ -30,7 +32,7 @@ class OrdersController < ApplicationController
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_total, # in cents
-      description: "Khurram Virani's Jungle Order",
+      description: "New Jungle Order",
       currency:    'cad'
     )
   end
