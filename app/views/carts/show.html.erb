@@ -27,7 +27,7 @@
             TOTAL:
           </th>
           <th>
-            <%= @cart_total %>
+            <%= humanized_money_with_symbol @cart_total %>
           </th>
         </tr>
       </tfoot>
@@ -36,7 +36,7 @@
 
   <div class="row">
     <div class="col-xs-12">
-      <% if @cart_total = 0 %>
+      <% if @cart_total == 0 %>
       Your cart is empty! <%= link_to 'Click here', [:root] %> to keep shopping.
       <% else %>
       <%= form_tag orders_path do %>

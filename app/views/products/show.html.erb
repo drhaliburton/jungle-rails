@@ -15,22 +15,29 @@
       <div class="col-sm-8">
         <dl class="dl-horizontal">
           <dt>Name</dt>
-          <dd><%= @product.name %></dd>
+            <dd><%= @product.name %></dd>
           <dt>Description</dt>
-          <dd><%= @product.description %></dd>
+            <dd><%= @product.description %></dd>
           <dt>Quantity</dt>
-          <dd><%= @product.quantity %></dd>
+            <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
-          <dd><%= @product.price %></dd>
+            <dd><%= humanized_money_with_symbol @product.price %></dd>
           <dt>Reviews</dt>
           <% @review.each do |r| %>
-          <dd><%= '⭐️' * r.rating %></dd>
-          <dd><%= r.description %></dd>
+            <dd><%= '⭐️' * r.rating %></dd>
+            <dd><%= r.description %></dd>
           <% end %>
+          <dd>
+            <%= form_for [@product, Review.new] do |f| %>
+            <p><%= f.select(:rating, ['1','2','3','4','5']) %></p>
+            <p><%= f.text_area(:description) %></p>
+            <p><%= f.submit %></p>
+            <% end %>
+         </dd>
         </dl>
       </div>
     </div>
-
   </article>
 
 </section>
+
