@@ -34,4 +34,12 @@ class ApplicationController < ActionController::Base
     }
     cookies[:cart]
   end
+
+  def admin_auth
+    authenticate_or_request_with_http_basic('Administration') do |username, password|
+      ActiveSupport::SecurityUtils.secure_compare(username, ENV['ADMIN_USERNAME']) &&
+      ActiveSupport::SecurityUtils.secure_compare(password, ENV['ADMIN_PASSWORD'])
+    end  
+  end
+  helper_method :admin_auth
 end

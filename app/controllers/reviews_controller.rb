@@ -18,6 +18,12 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = params[:product_id]
+    Review.find(params[:id]).destroy
+    redirect_to :back
+  end
+
   private
 
   def review_params

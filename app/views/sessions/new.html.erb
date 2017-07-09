@@ -1,10 +1,13 @@
 <h1>Login!</h1>
 
 <div class="form-group">
-<%= form_for :user, url: '/session' do |f| %>
-  Email: <%= f.text_field :email, :class => 'form-control' %><br>
-  Password: <%= f.password_field :password, :class => 'form-control' %><br>
-  <%= f.submit "Submit", :class => 'btn btn-submit' %>
-
-<% end %>
-</div>
+  <%= form_for :user, url: '/session' do |f| %>
+    Email: <%= f.text_field :email, :class => 'form-control' %><br>
+    Password: <%= f.password_field :password, :class => 'form-control' %><br>
+    <%= f.submit "Submit", :class => 'btn btn-submit' %>
+  <% end %>
+  <br>
+  <p>
+    Not a user? <%= link_to "Click here", new_user_path %> to register.
+  </p>
+ </div>
