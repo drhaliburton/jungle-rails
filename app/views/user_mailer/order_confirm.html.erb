@@ -18,6 +18,7 @@
         <th></th>
       <tr>
     </thead>
+    <% @order_total = 0 %>
     <% @order.line_items.each do |product| %>
       <tr>
         <td class="title"><%= product.product.name %></td>
@@ -25,9 +26,16 @@
         <td><%= product.product.description %></td> 
         <td><%= product.quantity %></td>
         <td><%= humanized_money_with_symbol product.quantity * product.product.price_cents/100%></td>
-      </tr>      
+      <% @order_total += (product.quantity * product.product.price_cents/100) %>
+      </tr>
     <% end %>
-  
+      <tr>
+        <td><b>Total</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b><%= humanized_money_with_symbol @order_total %></b></td>
+      </tr>
     </table>
   </body>
 </html>
