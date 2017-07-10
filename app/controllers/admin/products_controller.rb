@@ -3,7 +3,7 @@ class Admin::ProductsController < ApplicationController
   before_filter :admin_auth
 
   def index
-    @products = Product.order(id: :desc).all
+    @products = Product.order(id: :desc).al
   end
 
   def new

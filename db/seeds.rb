@@ -36,24 +36,10 @@ puts "Creating Users ..."
 User.destroy_all
 
 User.create!({
-  first_name: "Rebecca",
-  last_name: "Haliburton",
-  email: "a@a.a",
-  password_digest: "a"
-})
-
-User.create!({
-  first_name: "Shauna",
-  last_name: "G",
-  email: "g@g.g",
-  password_digest: "g"
-})
-
-User.create!({
-  first_name: "Aisha",
-  last_name: "Ram",
-  email: "r@r.r",
-  password_digest: "r"
+  first_name: "Guest",
+  last_name: "Guest",
+  email: "guest@guest.ca",
+  password_digest: "guest"
 })
  
 puts "Re-creating Products ..."
@@ -166,20 +152,6 @@ Review.create!({
   rating: 4,
   user_id: 1,
   product_id: 1
-})
-
-Review.create!({
-  description: Faker::Hipster.paragraph(1),
-  rating: 3,
-  user_id: 2,
-  product_id: 2
-})
-
-Review.create!({
-  description: Faker::Hipster.paragraph(1),
-  rating: 1,
-  user_id: 3,
-  product_id: 3
 })
 
 puts "DONE!"
